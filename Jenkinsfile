@@ -6,34 +6,37 @@
 	 tools{
 		   maven 'Maven'
 		   jdk 'JAVA8' 
+
 		   }
-
 	 stages{
-		stage('build the file in maven'){		  
-			steps{
-				mvn clean install
-				  }   
-		}
-		 stage('stop tomcat'){		  
-			steps{
-				service tomcat8 stop
-				  }
-		}
-		 stage('remove old war files'){
-			steps{
-			   rm -rf /var/lib/tomcat8/webapps/
-				 }
-		}
-		 stage('copy new war file'){
-			steps{
-			   cp -f target/*.war /var/lib/tomcat8/webapps/		
-				  }	 
+	   stage('Building the maven project'){
+	     steps{
+		   echo "Building "
+		 
+		 }
+	   
 	   }
-		 stage('start tomcat'){	  
-			steps{
-				service tomcat8 start
-				  }
-		}
-	}	   
-
+	   stage('testing the maven '){
+	     steps{
+		 
+		 echo "testing"
+		 }
+	   
+	   }
+	   stage('Package the project'){
+	     steps{
+		  echo "running packaing "
+		 
+		 }
+	   
+	   }
+	   stage('running deployment'){
+	     steps{
+		  echo " deployment running"
+		 
+		 }
+	   
+	   }
+	 
+	 }
 }
