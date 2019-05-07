@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>HomeGIT_pipeline_practise1_script</finalName>
+    <finalName>demo</finalName>
   </build>
 </project>
