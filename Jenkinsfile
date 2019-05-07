@@ -11,28 +11,28 @@
 	 stages{
 	   stage('Building the maven project'){
 	     steps{
-		   echo "Building "
+		   sh 'mvn clean install'
 		 
 		 }
 	   
 	   }
-	   stage('testing the maven '){
+	   stage('stop tomcat cat'){
 	     steps{
-		 
-		 echo "testing"
-		 }
-	   
-	   }
-	   stage('Package the project'){
-	     steps{
-		  echo "running packaing "
+		  sh 'service tomcat8 stop'
 		 
 		 }
 	   
 	   }
-	   stage('running deployment'){
+	   stage('copy war'){
 	     steps{
-		  echo " deployment running"
+		  sh 'cp -f target/*.war /var/lib/tomcat8/webapps/demo.war'
+		 
+		 }
+	   
+	   }
+	   stage('start tomcat'){
+	     steps{
+		  sh 'service tomcat8 start'
 		 
 		 }
 	   
