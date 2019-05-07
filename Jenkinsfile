@@ -15,7 +15,7 @@
 				git credentialsId: '1ce408e1-d630-4fa6-908f-952cef45ccae', url: 'https://github.com/sampathgoparaju/HomeGIT_pipeline_practise1_script.git'			
 				}
 		}
-		 stage('build the file in maven){		  
+		 stage('build the file in maven'){		  
 			steps{
 				mvn clean install
 				  }   
