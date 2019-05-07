@@ -11,28 +11,28 @@
 	 stages{
 	   stage('Building the maven project'){
 	     steps{
-		   'mvn clean install'
+		   mvn clean install
 		 
 		 }
 	   
 	   }
 	   stage('stop tomcat cat'){
 	     steps{
-		  'service tomcat8 stop'
+		  service tomcat8 stop
 		 
 		 }
 	   
 	   }
 	   stage('copy war'){
 	     steps{
-		  'cp -f target/*.war /var/lib/tomcat8/webapps/demo.war'
+		  cp -f target/*.war /var/lib/tomcat8/webapps/demo.war
 		 
 		 }
 	   
 	   }
 	   stage('start tomcat'){
 	     steps{
-		  'service tomcat8 start'
+		  service tomcat8 start
 		 
 		 }
 	   
