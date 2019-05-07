@@ -19,7 +19,7 @@
 				
 		      }
 			  }
-	 stage('build the file in maven){		  
+	 stage('build the file in maven'){		  
         steps {
 		    mvn clean install
 		      }   
